@@ -1,0 +1,359 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #1c1ecb;
+}
+
+/* Dark Mode Toggle Button */
+.dark-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #222;
+  transition: color 0.3s;
+}
+
+.dark-toggle:hover {
+  color: #1c1ecb;
+}
+
+/* ================= CONTENT ================= */
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+  gap: 40px;
+}
+
+/* ================= LEFT COLUMN ================= */
+.left-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.car-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.about-us,
+.contact-us {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+  transition: background 0.3s, color 0.3s;
+}
+
+.about-us h2,
+.contact-us h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #1F07F3;
+}
+
+.about-us p,
+.contact-us p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.contact-us img {
+  height: 18px;
+  width: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* ================= RIGHT COLUMN ================= */
+.right-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Booking Form Frame */
+.form-frame {
+  background-color: #1F07F3;
+  padding: 40px 20px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  transition: background 0.3s;
+}
+
+/* Modern Booking Form */
+.booking-form {
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.modern-form {
+  background: #f4f6fc9f;
+  padding: 40px 30px;
+  border-radius: 30px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.modern-form .logo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  border: 5px solid #000;
+}
+
+.modern-form h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #000;
+}
+
+/* Inputs */
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  width: 100%;
+  padding: 12px 45px 12px 16px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+  border: 1px solid #1F07F3;
+}
+
+.input-wrapper select {
+  appearance: none;
+  background-color: #fff;
+}
+
+.input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 16px;
+}
+
+/* Icons in Inputs */
+.input-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+}
+
+/* Search Button */
+.search-button {
+  background: #1F07F3;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-button:hover {
+  background: #0d05a3;
+}
+
+/* ================= DARK MODE ================= */
+.container.dark {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+/* Navbar Dark */
+.container.dark .navbar {
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+.container.dark .nav-links a {
+  color: #f1f1f1;
+}
+
+.container.dark .nav-links a:hover {
+  color: #ff9800;
+}
+
+.container.dark .dark-toggle {
+  color: #f1f1f1;
+}
+
+.container.dark .dark-toggle:hover {
+  color: #ff9800;
+}
+
+/* Left Column Dark */
+.container.dark .about-us,
+.container.dark .contact-us {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+.container.dark .about-us h2,
+.container.dark .contact-us h2 {
+  color: #ffcc00;
+}
+
+/* Right Column Form Dark */
+.container.dark .form-frame {
+  background-color: #222;
+}
+
+.container.dark .modern-form {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.container.dark .modern-form h2 {
+  color: #ffcc00;
+}
+
+.container.dark .modern-form .logo {
+  border: 5px solid #ffcc00;
+}
+
+/* Inputs Dark */
+.container.dark .input-wrapper input,
+.container.dark .input-wrapper select {
+  background: #333;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.container.dark .input-wrapper input:focus,
+.container.dark .input-wrapper select:focus {
+  border: 1px solid #ffcc00;
+}
+
+.container.dark .input-icon {
+  color: #bbb;
+}
+
+/* Buttons Dark */
+.container.dark .search-button {
+  background: #ffcc00;
+  color: #000;
+}
+
+.container.dark .search-button:hover {
+  background: #e6b800;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .form-frame {
+    width: 100%;
+  }
+}
+.site-footer {
+  text-align: center;
+  padding: 16px 0;
+  background-color: #f8fafc; /* light mode */
+  color: #1e293b;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 40px;
+}
+
+.site-footer.dark {
+  background-color: #1e293b; /* dark mode */
+  color: #f1f5f9;
+}

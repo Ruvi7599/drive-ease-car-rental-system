@@ -1,0 +1,185 @@
+/* AdminDashboard.css */
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, #1F07F3 0%, #4A0BFF 50%, #7B1FFF 100%);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.logo-circle {
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logo-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #6b7280;
+}
+
+.dashboard-title {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.menu-item:hover {
+  background-color: rgba(142, 135, 172, 0.5);
+}
+
+.menu-item.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 50%;
+  margin: 0 auto; /* 🔥 centers the button inside the sidebar */
+}
+
+
+.logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px;
+  background-color: #f1f5f9;
+}
+
+/* Grid Layout */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 100px;
+  margin-bottom: 32px;
+  justify-items: center; /* Center cards in each column */
+}
+
+/* Card Styles */
+.stats-grid .card {
+  width: 100%; /* Ensure full width inside the grid cell */
+  min-height: 80px; /* Set a minimum height for cards */
+  box-sizing: border-box; /* Include padding and borders in the element's total size */
+  padding: 24px; /* Padding for card content */
+  border-radius: 16px; /* Rounded corners */
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for the card */
+  border: 1px solid #e2e8f0; /* Light border color */
+  text-align: center; /* Center content */
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.card-value {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1F07F3;
+}
+
+.footer-new {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #1F07F3 0%, #4A0BFF 50%, #7B1FFF 100%);
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 100;
+}
+
+@media (min-width: 768px) {
+  .footer-new {
+    margin-left: 280px; 
+  }
+}
+.logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 20px;       /* slightly more vertical padding */
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;              /* full width to match menu items */
+  text-align: center;       /* center text/icon */
+  margin-top: auto;          /* push logout button to the bottom of sidebar */
+}
+
+.logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+

@@ -1,0 +1,248 @@
+/* ============================= */
+/* LIGHT MODE (Default)          */
+/* ============================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f3f4f6;
+}
+
+/* Login Container */
+.login-container {
+  min-height: 100vh;
+  width: 100vw;
+  background: url('../assets/drive-ease.png') no-repeat center center;
+  background-size: cover; /* Makes it cover the full screen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Login Card */
+.login-card {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 48px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  padding: 48px 32px 40px 32px;
+  width: 480px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo Box */
+.logo-box {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 24px rgba(31, 38, 135, 0.15), 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.logo-box:hover {
+  transform: scale(1.05);
+}
+
+.logo-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #f4f6fc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Input */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.input-box {
+  width: 100%;
+  padding: 24px 56px 24px 24px;
+  border: none;
+  background: #f7f5ff;
+  font-size: 1.2rem;
+  color: #444;
+  outline: none;
+  font-weight: 500;
+  transition: box-shadow 0.2s, background 0.3s, color 0.3s;
+  border-radius: 15px !important;
+}
+
+.input-box::placeholder {
+  text-align: left;
+}
+
+.input-box:focus {
+  box-shadow: 0 0 0 2px #1506ec;
+  background-color: #ffffff;
+}
+
+.input-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #222;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Login Button */
+.login-button {
+  width: 50%;
+  padding: 16px 0;
+  border: none;
+  border-radius: 32px;
+  background: #F4F6FC;
+  color: #000000;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.3s, transform 0.2s, color 0.3s;
+}
+
+.login-button:hover {
+  background: #e0e5f2;
+  transform: scale(1.05);
+}
+
+.login-button:active {
+  background: #d1d8e3;
+}
+
+.login-button:focus,
+.input-box:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(53, 0, 250, 0.5);
+}
+
+/* Dark Mode Toggle Button (fixed style) */
+/* Dark Mode Toggle Button (fixed to screen top-right) */
+.dark-mode-toggle {
+  position: fixed;        /* <--- changed from absolute */
+  top: 16px;
+  right: 16px;
+  background: #ffffffcc;  /* semi-white background */
+  color: #111;            /* dark text */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 1000;          /* ensure it's above everything */
+  transition: background 0.3s, transform 0.2s;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  background: #fff;
+}
+
+.dark-mode-toggle:active {
+  background: #eee;
+}
+
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-card {
+    width: 90%;
+    padding: 24px;
+  }
+
+  .logo-box {
+    width: 120px;
+    height: 120px;
+  }
+
+  .input-box {
+    font-size: 1rem;
+  }
+
+  .login-button {
+    font-size: 1rem;
+  }
+}
+
+/* ============================= */
+/* DARK MODE OVERRIDES           */
+/* ============================= */
+.login-container.dark-mode {
+  position: relative;
+  background: url('../assets/drive-ease.png') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* Dark overlay on background */
+.login-container.dark-mode::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* controls dimness */
+  z-index: 0;
+}
+
+/* Ensure card appears above overlay */
+.login-container.dark-mode .login-card {
+  background: rgba(22, 27, 34, 0.85);
+  color: #f5f5f5;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.login-container.dark-mode .logo-box {
+  background: linear-gradient(145deg, #1e1e1e, #2c2c2c);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+}
+
+.login-container.dark-mode .logo-img {
+  border: 4px solid #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.login-container.dark-mode .input-box {
+  background: #2a2f36;
+  color: #f5f5f5;
+  border: 1px solid #444;
+}
+
+.login-container.dark-mode .input-box::placeholder {
+  color: #aaa;
+}
+
+.login-container.dark-mode .input-icon {
+  color: #ccc;
+}
+
+.login-container.dark-mode .login-button {
+  background: #30363d;
+  color: #f5f5f5;
+}
+
+.login-container.dark-mode .login-button:hover {
+  background: #3c444c;
+}
+
+.login-container.dark-mode .login-button:active {
+  background: #22272e;
+}

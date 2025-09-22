@@ -1,0 +1,246 @@
+.upload-contracts-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, #1F07F3 0%, #4A0BFF 50%, #7B1FFF 100%);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-logo-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.sidebar-logo-circle {
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-logo-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #6b7280;
+}
+
+.sidebar-title {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-menu-btn,
+.sidebar-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;          /* full width for logout button too */
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-menu-btn:hover,
+.sidebar-logout-btn:hover {
+  background-color: rgba(142, 135, 172, 0.5);
+}
+
+.sidebar-menu-btn.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-logout-btn {
+  margin-top: auto;    /* push logout button to bottom */
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 40px 24px;
+  background-color: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;         
+  justify-content: flex-start; 
+}
+
+.main-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* Contract Form */
+.contract-form {
+  background-color: white;
+  border-radius: 16px;
+  padding: 36px;
+  width: 100%;
+  max-width: 640px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+/* Form Fields */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 12px 44px 12px 18px;
+  border: none;
+  border-radius: 40px;
+  font-size: 16px;
+  background-color: #f3f4f6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.form-input:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 3px rgba(31, 7, 243, 0.2);
+}
+
+.form-select-wrapper {
+  position: relative;
+}
+
+.form-select {
+  appearance: none;
+}
+
+.form-select-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: #f3f4f6;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.form-actions {
+  text-align: center;
+}
+
+.form-upload-btn {
+  background: linear-gradient(90deg, #1F07F3 0%, #4A0BFF 50%, #7B1FFF 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(31, 7, 243, 0.3);
+}
+
+.form-upload-btn:hover {
+  transform: scale(1.03);
+  background-color: #4a0bff;
+}
+
+/* Footer */
+.main-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;           /* start from the very left */
+  width: 100%;       /* span full width */
+  background: linear-gradient(90deg, #1F07F3 0%, #4A0BFF 50%, #7B1FFF 100%);
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 100;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+ @media (min-width: 769px) {
+  .main-footer {
+    padding-left: 280px; /* match sidebar width if desired */
+  }
+}
+
+  .contract-form {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .main-content {
+    padding: 24px;
+  }
+}
+/* Sidebar Logout Button */
+
+
