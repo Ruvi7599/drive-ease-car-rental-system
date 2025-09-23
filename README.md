@@ -24,7 +24,7 @@ Here’s a preview of the application screens:
 
 | Booking (Light) | Booking (Dark) |
 |-----------------|----------------|
-| ![Booking Light](./ui/booking _page_light.png) | ![Booking Dark](./ui/booking _page_dark.png) |
+| ![Booking Light](./ui/booking_page_light.png) | ![Booking Dark](./ui/booking_page_dark.png) |
 
 | Admin Login | Admin Dashboard |
 |-------------|-----------------|
